@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Hand Simulator</title>
+</head>
+<body>
+
+    <p>List of 50 Cards in World Champion Shao Tong Yen's Deck:</p>
+
+    <!-- Display and generate the cards and deck -->
+    <ul id = 'pokemonCardList'>
+
+    <!-- Pokemon -->
+    <li>Comfey (1)</p>
+    <li>Comfey (2)</p>
+    <li>Comfey (3)</p>
+    <li>Comfey (4)</p>
+    <li>Sableye (1)</p>
+    <li>Sableye (2)</p>
+    <li>Kyogre</p>
+    <li>Dragonite</p>
+    <li>Cramorant</p>
+    <li>Radiant Greninja</p>
+    <li>Raikou</p>
+    <li>Manaphy</p>
+
+    <!-- Energy -->
+    <li>Water Energy</p>
+    <li>Water Energy</p>
+    <li>Water Energy</p>
+    <li>Water Energy</p>
+    <li>Water Energy</p>
+    <li>Electric Energy</p>
+    <li>Electric Energy</p>
+    <li>Electric Energy</p>
+    <li>Psychic Energy</p>
+    <li>Psychic Energy</p>
+    <li>Psychic Energy</p>
+
+    <!-- Trainers/Items -->
+    <li>Klara</p>
+    <li>PokeStop</p>
+    <li>Escape Rope</p>
+    <li>Escape Rope</p>
+    <li>Escape Rope</p>
+    <li>Escape Rope</p>
+    <li>Mirage Gate</p>
+    <li>Battle VIP Pass</p>
+    <li>Battle VIP Pass</p>
+    <li>Battle VIP Pass</p>
+    <li>Battle VIP Pass</p>
+    <li>Switch Cart</p>
+    <li>Nest Ball</p>
+    <li>Nest Ball</p>
+    <li>Nest Ball</p>
+    <li>Energy Recycler</p>
+    <li>Energy Recycler</p>
+    <li>Energy Recycler</p>
+    <li>Energy Recycler</p>
+    <li>Lost Vacuum</p>
+    <li>Lost Vacuum</p>
+    <li>Super Rod</p>
+    <li>Super Rod</p>
+    <li>Echoing Horn</p>
+    <li>Hisuian Heavy Ball</p>
+    <li>Pal Pad</p>
+    <li>Forest Seal Stone</p>
+        </ul>
+    <h2>End of Deck</h2>
+
+    <!-- Make the empty list that will be used for the hand creation -->
+    <ul id = 'userHand'></ul>
+
+    <!-- Time to create the first button: Deal Hand -->
+    <button onclick = 'createHand()'> Deal Hand </button>
+
+    <!-- Now for the Draw button -->
+    <button onclick = 'addCard()'> Draw </button>
+
+    <script>
+        // Use an anonymous function that first clears the current hand and then deals a new hand
+        // document.getElementById('getNewHand').addEventListener('click', () =>
+        // {
+        //     deleteHand();
+        //     createHand();
+        // });
+
+        // Create a function that clears the user's current hand
+        function deleteHand()
+        {
+            const HAND = document.getElementById('userHand');
+            HAND.innerHTML = '';
+        }
+
+        // Create a function that makes a new hand of 7 random cards from the deck
+        function createHand()
+        {
+            deleteHand(); // Clear whatever is currently in the user's hand
+
+            // Accessing the list of the cards in the deck and giving it a variable declaration
+            const CARDS = document.getElementById('pokemonCardList');
+            // Accessing a currently empty list that will be filled with 7 random cards from the deck
+            const HAND = document.getElementById('userHand');
+            // Copying all of the cards from the deck and putting it into a node list
+            const NODE_LIST_OF_CARDS = CARDS.querySelectorAll('li');
+
+            // Create an array that will hold the drawn cards so that no cards get drawn twice
+            let drawnCardIndices = [];
+
+            // Creating a for loop to go through the Node List and pick 7 cards at random
+            for (let a = 0; a < 7; ++a)
+            {
+                let randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length); // generate rand num between 0 and 49
+
+                // Use the include function to determine if the random generation would result in drawing a duplicate card
+                if (!drawnCardIndices.includes(randomCard)) // Check if the randomCard (index) has not already been drawn
+                {
+                    drawnCardIndices.push(randomCard); // Add the random card to the drawnCards array
+                }
+                else
+                {
+                    while (drawnCardIndices.includes(randomCard)) // If it has been drawn, randomly generate a card until a unique card (index) has been drawn
+                    {
+                        randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length);
+                    }
+
+                    drawnCardIndices.push(randomCard); // Now that we have a unique index, add the randomCard (index) to the array
+                }
+
+                const HAND_CARD = NODE_LIST_OF_CARDS[randomCard]; // get the list element at index i
+                const NEW_HAND_CARD = HAND_CARD.cloneNode(true); // clone it
+
+                HAND.appendChild(NEW_HAND_CARD); // add it to the HAND list
+            }
+        }
+
+        // Create the function that will allow the user to draw a card
+        function addCard()
+        {
+            
+        }
+    </script>
+
+</body>
+</html>
