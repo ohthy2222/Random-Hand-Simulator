@@ -13,60 +13,60 @@
     <ul id = 'pokemonCardList'>
 
     <!-- Pokemon -->
-    <li>Comfey (1)</p>
-    <li>Comfey (2)</p>
-    <li>Comfey (3)</p>
-    <li>Comfey (4)</p>
-    <li>Sableye (1)</p>
-    <li>Sableye (2)</p>
-    <li>Kyogre</p>
-    <li>Dragonite</p>
-    <li>Cramorant</p>
-    <li>Radiant Greninja</p>
-    <li>Raikou</p>
-    <li>Manaphy</p>
+    <li> <img src = "C:\Users\kf207\Documents\Random Hand Simulator\Images of Pokemon\Comfey (1).png" alt = "Comfey (1)"> Comfey (1) </li>
+    <li> <!-- <img src = "image.jpeg" alt = "Comfey (2)"> --> Comfey (2) </li>
+    <li> <!-- <img src = "image.png" alt = "Comfey (3)> --> Comfey (3) </li>
+    <li>Comfey (4)</li>
+    <li>Sableye (1)</li>
+    <li>Sableye (2)</li>
+    <li>Kyogre</li>
+    <li>Dragonite</li>
+    <li>Cramorant</li>
+    <li>Radiant Greninja</li>
+    <li>Raikou</li>
+    <li>Manaphy</li>
 
     <!-- Energy -->
-    <li>Water Energy</p>
-    <li>Water Energy</p>
-    <li>Water Energy</p>
-    <li>Water Energy</p>
-    <li>Water Energy</p>
-    <li>Electric Energy</p>
-    <li>Electric Energy</p>
-    <li>Electric Energy</p>
-    <li>Psychic Energy</p>
-    <li>Psychic Energy</p>
-    <li>Psychic Energy</p>
+    <li>Water Energy</li>
+    <li>Water Energy</li>
+    <li>Water Energy</li>
+    <li>Water Energy</li>
+    <li>Water Energy</li>
+    <li>Electric Energy</li>
+    <li>Electric Energy</li>
+    <li>Electric Energy</li>
+    <li>Psychic Energy</li>
+    <li>Psychic Energy</li>
+    <li>Psychic Energy</li>
 
     <!-- Trainers/Items -->
-    <li>Klara</p>
-    <li>PokeStop</p>
-    <li>Escape Rope</p>
-    <li>Escape Rope</p>
-    <li>Escape Rope</p>
-    <li>Escape Rope</p>
-    <li>Mirage Gate</p>
-    <li>Battle VIP Pass</p>
-    <li>Battle VIP Pass</p>
-    <li>Battle VIP Pass</p>
-    <li>Battle VIP Pass</p>
-    <li>Switch Cart</p>
-    <li>Nest Ball</p>
-    <li>Nest Ball</p>
-    <li>Nest Ball</p>
-    <li>Energy Recycler</p>
-    <li>Energy Recycler</p>
-    <li>Energy Recycler</p>
-    <li>Energy Recycler</p>
-    <li>Lost Vacuum</p>
-    <li>Lost Vacuum</p>
-    <li>Super Rod</p>
-    <li>Super Rod</p>
-    <li>Echoing Horn</p>
-    <li>Hisuian Heavy Ball</p>
-    <li>Pal Pad</p>
-    <li>Forest Seal Stone</p>
+    <li>Klara</li>
+    <li>PokeStop</li>
+    <li>Escape Rope</li>
+    <li>Escape Rope</li>
+    <li>Escape Rope</li>
+    <li>Escape Rope</li>
+    <li>Mirage Gate</li>
+    <li>Battle VIP Pass</li>
+    <li>Battle VIP Pass</li>
+    <li>Battle VIP Pass</li>
+    <li>Battle VIP Pass</li>
+    <li>Switch Cart</li>
+    <li>Nest Ball</li>
+    <li>Nest Ball</li>
+    <li>Nest Ball</li>
+    <li>Energy Recycler</li>
+    <li>Energy Recycler</li>
+    <li>Energy Recycler</li>
+    <li>Energy Recycler</li>
+    <li>Lost Vacuum</li>
+    <li>Lost Vacuum</li>
+    <li>Super Rod</li>
+    <li>Super Rod</li>
+    <li>Echoing Horn</li>
+    <li>Hisuian Heavy Ball</li>
+    <li>Pal Pad</li>
+    <li>Forest Seal Stone</li>
         </ul>
     <h2>End of Deck</h2>
 
@@ -80,17 +80,15 @@
     <button onclick = 'addCard()'> Draw </button>
 
     <script>
-        // Use an anonymous function that first clears the current hand and then deals a new hand
-        // document.getElementById('getNewHand').addEventListener('click', () =>
-        // {
-        //     deleteHand();
-        //     createHand();
-        // });
-
         // Create a global array that will hold the drawn cards so that no cards get drawn twice
         let drawnCardIndices = [];
 
         // Create a function that clears the user's current hand
+        // signature: deleteHand(): void -> void
+
+        // purpose: expects nothing and returns nothing with the side-effect of
+        //          delting all of the cards in the hand that the user has been dealt
+
         function deleteHand()
         {
             const HAND = document.getElementById('userHand');
@@ -98,6 +96,12 @@
         }
 
         // Create a function that makes a new hand of 7 random cards from the deck
+        // signature: createHand(): void -> void
+
+        // purpose: expects nothing and returns nothing with the side-effect of
+        //          calling the deleteHand() function and then giving the user
+        //          seven randomly generated cards from the deck of 50
+
         function createHand()
         {
             deleteHand(); // Clear whatever is currently in the user's hand
@@ -137,33 +141,41 @@
         }
 
         // Create the function that will allow the user to draw a card. It basically does the same thing as createHand but only one time instead of seven
+        // signature: addCard(): void -> void
+
+        // purpose: expects nothing and returns nothing with the side-effect of
+        //          adding one random card to the user's current hand
+
         function addCard()
         {
-            const CARDS = document.getElementById('pokemonCardList'); // Access the original deck of 50 cards
-            const HAND = document.getElementById('userHand'); // Access the user's hand
-            const NODE_LIST_OF_CARDS = CARDS.querySelectorAll('li'); // Copy all of the cards and put them into a node list again
-
-            let randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length); // generate random number that will be used as an index
-
-            // Use the same exact check as in the createHand() function
-            if (!drawnCardIndices.includes(randomCard))
+            if (drawnCardIndices.length < 50)
             {
-                drawnCardIndices.push(randomCard);
-            }
-            else
-            {
-                while (drawnCardIndices.includes(randomCard))
+                const CARDS = document.getElementById('pokemonCardList'); // Access the original deck of 50 cards
+                const HAND = document.getElementById('userHand'); // Access the user's hand
+                const NODE_LIST_OF_CARDS = CARDS.querySelectorAll('li'); // Copy all of the cards and put them into a node list again
+
+                let randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length); // generate random number that will be used as an index
+
+                // Use the same exact check as in the createHand() function
+                if (!drawnCardIndices.includes(randomCard))
                 {
-                    randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length);
+                    drawnCardIndices.push(randomCard);
+                }
+                else
+                {
+                    while (drawnCardIndices.includes(randomCard))
+                    {
+                        randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length);
+                    }
+
+                    drawnCardIndices.push(randomCard);
                 }
 
-                drawnCardIndices.push(randomCard);
+                // Get a list element, clone it, and add it to the userHand list
+                const HAND_CARD = NODE_LIST_OF_CARDS[randomCard];
+                const NEW_HAND_CARD = HAND_CARD.cloneNode(true);
+                HAND.appendChild(NEW_HAND_CARD);
             }
-
-            // Get a list element, clone it, and add it to the userHand list
-            const HAND_CARD = NODE_LIST_OF_CARDS[randomCard];
-            const NEW_HAND_CARD = HAND_CARD.cloneNode(true);
-            HAND.appendChild(NEW_HAND_CARD);
 
         }
     </script>
