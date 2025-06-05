@@ -180,5 +180,78 @@
         }
     </script>
 
+    <!-- TIME TO MAKE THE CARDS -->
+     <!-- Comfey1 -->
+     <style>
+        body
+        {
+            background-color: #2b2a2a; /* background of web page is dark gray */
+            display: flex; /* the web page is using flex, so that the cards can be placed based on other elements in the web page such as list elements */
+            flex-direction: column; /* the cards will appear vertically due to the column format */
+            align-items: center; /* make them centered horizontally */
+            height: 50vh; /* card is 50% of the height of the page */
+            margin: 0; /* removes the margin around the body that some browsers add automatically */
+            font-family: 'Lucida Console'; /* make the font retro style */
+        }
+
+        .pkmn-card
+        {
+            width: 200px;
+            height: 270px;
+            border-radius: 18px;  /* rounds card edges */
+            background-color: #ba0277; /* background color of card is dark pink */
+            border: 11px solid #ffc403; /* solid yellow border around card */
+            padding: 10px; /* 10px of blank space surrounding card so cards aren't directly next to each other */
+            display: grid; /* styling of the card itself will be in grid format */
+            grid-template-rows: auto 1fr auto; /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
+        }
+
+        .card-name-img
+        {
+            display: grid;
+            grid-template-rows: 1fr 1fr; /* split the container 50-50, top half is the pokemon name, bottom half is an image */
+            /* note: I need to do something about how the HP should be aligned at the "end" of the card but on the same line as the name */
+            font-size: 20px;
+        }
+
+        .pkmn-img img
+        {
+            width: 175px;
+            height: 100px;
+        }
+
+        .card-move-titles
+        {
+            display: grid;
+            place-items: center;
+            font-size: 10px; /* font size of move titles is 10 pixels */
+        }
+
+        .card-bottom
+        {
+            display: grid;
+            grid-template-rows: 1fr; /* fill the entire space with the weakness, resistance, and retreat cost of the pokemon */
+            font-size: 7px; /* Have the font size slightly larger than move-descriptions, but smaller than move-titles */
+        }
+    </style>
+<body>
+    <div class = 'pkmn-card'> <!-- group the entire card and it's content onto the page in a box -->
+        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+            <span class = 'pkmn-name'> Comfey HP70 </span> <!-- Comfey is the name of the pokemon, and it has 70 health points -->
+            <span class = 'pkmn-img'>
+                <img src = "images_of_pokemon/comfey1.png" alt = "Comfey1">
+            </span>
+        </div>
+        <div class = 'card-move-titles'>
+            <span class = 'pkmn-move-dmg'> Sweet Kiss 30 </span> <!-- Comfey has a move called Sweet Kiss that does 30 damage -->
+        </div>
+        <div class = 'card-bottom'>
+            <span class = 'card-wrr'> weakness: Steal x 2 | resistance: Dark - 20 | retreat: 1 </span> <!-- Comfey takes double damage from steal types, 20 less damage from dark types and has a retreat cost of 1 energy -->
+        </div>
+    </div>
+</body>
+
+
+
 </body>
 </html>
