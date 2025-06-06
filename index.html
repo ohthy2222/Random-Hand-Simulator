@@ -10,12 +10,12 @@
     <p>List of 50 Cards in World Champion Shao Tong Yen's Deck:</p>
 
     <!-- Display and generate the cards and deck -->
-    <ul id = 'pokemonCardList'>
+    <ul id = 'pkmn-card-list'>
 
     <!-- Pokemon -->
-    <li> <img src = "C:\Users\kf207\Documents\Random Hand Simulator\Images of Pokemon\Comfey (1).png" alt = "Comfey (1)"> Comfey (1) </li>
-    <li> <!-- <img src = "image.jpeg" alt = "Comfey (2)"> --> Comfey (2) </li>
-    <li> <!-- <img src = "image.png" alt = "Comfey (3)> --> Comfey (3) </li>
+    <li> Comfey (1) </li>
+    <li> Comfey (2) </li>
+    <li> Comfey (3) </li>
     <li>Comfey (4)</li>
     <li>Sableye (1)</li>
     <li>Sableye (2)</li>
@@ -71,7 +71,7 @@
     <h2>End of Deck</h2>
 
     <!-- Make the empty list that will be used for the hand creation -->
-    <ul id = 'userHand'></ul>
+    <ul id = 'user-hand'></ul>
 
     <!-- Time to create the first button: Deal Hand -->
     <button onclick = 'createHand()'> Deal Hand </button>
@@ -79,6 +79,7 @@
     <!-- Now for the Draw button -->
     <button onclick = 'addCard()'> Draw </button>
 
+    <!-- Use JavaScript to make functions for the "Deal Hand" and "Draw" buttons below -->
     <script>
         // Create a global array that will hold the drawn cards so that no cards get drawn twice
         let drawnCardIndices = [];
@@ -91,7 +92,7 @@
 
         function deleteHand()
         {
-            const HAND = document.getElementById('userHand');
+            const HAND = document.getElementById('user-hand');
             HAND.innerHTML = '';
         }
 
@@ -107,9 +108,9 @@
             deleteHand(); // Clear whatever is currently in the user's hand
 
             // Accessing the list of the cards in the deck and giving it a variable declaration
-            const CARDS = document.getElementById('pokemonCardList');
+            const CARDS = document.getElementById('pkmn-card-list');
             // Accessing a currently empty list that will be filled with 7 random cards from the deck
-            const HAND = document.getElementById('userHand');
+            const HAND = document.getElementById('user-hand');
             // Copying all of the cards from the deck and putting it into a node list
             const NODE_LIST_OF_CARDS = CARDS.querySelectorAll('li');
 
@@ -150,8 +151,8 @@
         {
             if (drawnCardIndices.length < 50)
             {
-                const CARDS = document.getElementById('pokemonCardList'); // Access the original deck of 50 cards
-                const HAND = document.getElementById('userHand'); // Access the user's hand
+                const CARDS = document.getElementById('pkmn-card-list'); // Access the original deck of 50 cards
+                const HAND = document.getElementById('user-hand'); // Access the user's hand
                 const NODE_LIST_OF_CARDS = CARDS.querySelectorAll('li'); // Copy all of the cards and put them into a node list again
 
                 let randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length); // generate random number that will be used as an index
@@ -171,7 +172,7 @@
                     drawnCardIndices.push(randomCard);
                 }
 
-                // Get a list element, clone it, and add it to the userHand list
+                // Get a list element, clone it, and add it to the user-hand list
                 const HAND_CARD = NODE_LIST_OF_CARDS[randomCard];
                 const NEW_HAND_CARD = HAND_CARD.cloneNode(true);
                 HAND.appendChild(NEW_HAND_CARD);
@@ -181,17 +182,28 @@
     </script>
 
     <!-- TIME TO MAKE THE CARDS -->
-     <!-- Comfey1 -->
-     <style>
+    <style>
+        .pkmn-card-list
+        {
+            flex-grow: 1; /* let the card take up as much vertical space as has been allocated for it */
+            overflow-y: auto; /* Add a scroll bar if the card ends up off viewport */
+            max-height: calc(100vh - 270px); /* Allocate exactly 270px for the card on the viewport, in other words don't let the list go past viewport height - card height */
+        }
+
+        * { /* do this globally with the universal selector: '*' */
+            box-sizing: border-box; /* ensure that border and padding don't mess with any card sizes */
+          }
+    /* Comfey1 */
         body
         {
             background-color: #2b2a2a; /* background of web page is dark gray */
             display: flex; /* the web page is using flex, so that the cards can be placed based on other elements in the web page such as list elements */
             flex-direction: column; /* the cards will appear vertically due to the column format */
-            align-items: center; /* make them centered horizontally */
-            height: 50vh; /* card is 50% of the height of the page */
+            align-items: start; /* Have everything on the left side of the page and onwards */
+            height: 100vh; /* card is 100% of the height of the page that's currently visible */
             margin: 0; /* removes the margin around the body that some browsers add automatically */
             font-family: 'Lucida Console'; /* make the font retro style */
+            /*change font color to white*/
         }
 
         .pkmn-card
@@ -204,27 +216,36 @@
             padding: 10px; /* 10px of blank space surrounding card so cards aren't directly next to each other */
             display: grid; /* styling of the card itself will be in grid format */
             grid-template-rows: auto 1fr auto; /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
+            align-items: stretch; /* make the cards size not be based on it's content */
+            flex-shrink: 0; /* This stops the card from ever shrinking */
         }
 
         .card-name-img
         {
             display: grid;
-            grid-template-rows: 1fr 1fr; /* split the container 50-50, top half is the pokemon name, bottom half is an image */
+            grid-template-rows: 1fr; /* split the container 50-50, top half is the pokemon name, bottom half is an image */
             /* note: I need to do something about how the HP should be aligned at the "end" of the card but on the same line as the name */
             font-size: 20px;
+            font-weight: bold; /* make the font bold */
         }
 
         .pkmn-img img
         {
-            width: 175px;
+            grid-template-rows: 1fr 1fr;
+            display: grid;
+            width: 160px;
             height: 100px;
+            height: 100%;
         }
 
         .card-move-titles
         {
+            grid-template-rows: 1fr;
             display: grid;
             place-items: center;
             font-size: 10px; /* font size of move titles is 10 pixels */
+            font-weight: bold;
+            height: 100%;
         }
 
         .card-bottom
@@ -232,26 +253,25 @@
             display: grid;
             grid-template-rows: 1fr; /* fill the entire space with the weakness, resistance, and retreat cost of the pokemon */
             font-size: 7px; /* Have the font size slightly larger than move-descriptions, but smaller than move-titles */
+            font-weight: bold;
         }
     </style>
-<body>
+<body> <!-- division (<div>) is a block-level element, which makes it so that the card keeps it's height because each entire block is filled and stretches -->
     <div class = 'pkmn-card'> <!-- group the entire card and it's content onto the page in a box -->
         <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <span class = 'pkmn-name'> Comfey HP70 </span> <!-- Comfey is the name of the pokemon, and it has 70 health points -->
-            <span class = 'pkmn-img'>
-                <img src = "images_of_pokemon/comfey1.png" alt = "Comfey1">
-            </span>
+            <div class = 'pkmn-name'> Comfey HP70 </div> <!-- Comfey is the name of the pokemon, and it has 70 health points -->
+            <div class = 'pkmn-img'>
+                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/comfey1.png" alt = "Comfey1">
+            </div>
         </div>
         <div class = 'card-move-titles'>
-            <span class = 'pkmn-move-dmg'> Sweet Kiss 30 </span> <!-- Comfey has a move called Sweet Kiss that does 30 damage -->
+            <div class = 'pkmn-move-dmg'> Sweet Kiss 30 </div> <!-- Comfey has a move called Sweet Kiss that does 30 damage -->
         </div>
         <div class = 'card-bottom'>
-            <span class = 'card-wrr'> weakness: Steal x 2 | resistance: Dark - 20 | retreat: 1 </span> <!-- Comfey takes double damage from steal types, 20 less damage from dark types and has a retreat cost of 1 energy -->
+            <div class = 'card-wrr'> weakness: Steal x 2 | resistance: Dark - 20 | retreat: 1 </div> <!-- Comfey takes double damage from steal types, 20 less damage from dark types and has a retreat cost of 1 energy -->
         </div>
     </div>
 </body>
-
-
 
 </body>
 </html>
