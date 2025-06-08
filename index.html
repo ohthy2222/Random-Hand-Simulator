@@ -1,682 +1,1114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Hand Simulator</title>
-</head>
-<body>
 
-    <p>List of 50 Cards in World Champion Shao Tong Yen's Deck (Note: The Cards Are Not Exactly The Same)</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random Hand Simulator</title>
+    </head>
 
-    <!-- Display and generate the cards and deck -->
-    <ul id = 'pkmn-card-list'>
+    <body>
+    <div id = 'all-elements'>
 
-    <!-- Pokemon -->
-    <li data-pkmn-card = 'comfey1'> Comfey 1 </li>
-    <li data-pkmn-card = 'comfey2'> Comfey2 </li>
-    <li data-pkmn-card = 'comfey3'> Comfey3 </li>
-    <li data-pkmn-card = 'comfey4'> Comfey4 </li>
-    <li data-pkmn-card = 'sableye1'> Sableye1 </li>
-    <li data-pkmn-card = 'sableye2'> Sableye2 </li>
-    <li data-pkmn-card = 'kyogre'> Kyogre </li>
-    <li data-pkmn-card = 'dragonite'> Dragonite </li>
-    <li data-pkmn-card = 'cramorant'> Cramorant </li>
-    <li data-pkmn-card = 'radiant-greninja'> Radiant Greninja </li>
-    <li data-pkmn-card = 'raikou'> Raikou </li>
-    <li data-pkmn-card = 'manaphy'> Manaphy </li>
+        <p>List of 50 Cards in World Champion Shao Tong Yen's Deck (Note: The Cards Are Not Exactly The Same)</p>
 
-    <!-- Energy -->
-    <li data-pkmn-card = 'water-energy'> Water Energy </li>
-    <li data-pkmn-card = 'water-energy'> Water Energy </li>
-    <li data-pkmn-card = 'water-energy'> Water Energy </li>
-    <li data-pkmn-card = 'water-energy'> Water Energy </li>
-    <li data-pkmn-card = 'water-energy'> Water Energy </li>
-    <li data-pkmn-card = 'electric-energy'> Electric Energy </li>
-    <li data-pkmn-card = 'electric-energy'> Electric Energy </li>
-    <li data-pkmn-card = 'electric-energy'> Electric Energy </li>
-    <li data-pkmn-card = 'psychic-energy'> Psychic Energy </li>
-    <li data-pkmn-card = 'psychic-energy'> Psychic Energy </li>
-    <li data-pkmn-card = 'psychic-energy'> Psychic Energy </li>
+        <!-- Display and generate the cards and deck -->
+        <ul id='pkmn-card-list'>
 
-    <!-- Trainers/Items -->
-    <li data-pkmn-card = 'klara'> Klara </li>
-    <li data-pkmn-card = 'pokestop'> PokeStop </li>
-    <li data-pkmn-card = 'escape-rope'> Escape Rope </li>
-    <li data-pkmn-card = 'escape-rope'> Escape Rope </li>
-    <li data-pkmn-card = 'escape-rope'> Escape Rope </li>
-    <li data-pkmn-card = 'escape-rope'> Escape Rope </li>
-    <li data-pkmn-card = 'mirage-gate'> Mirage Gate </li>
-    <li data-pkmn-card = 'battle-vip-pass'> Battle VIP Pass </li>
-    <li data-pkmn-card = 'battle-vip-pass'> Battle VIP Pass </li>
-    <li data-pkmn-card = 'battle-vip-pass'> Battle VIP Pass </li>
-    <li data-pkmn-card = 'battle-vip-pass'> Battle VIP Pass </li>
-    <li data-pkmn-card = 'switch-cart'> Switch Cart </li>
-    <li data-pkmn-card = 'nest-ball'> Nest Ball </li>
-    <li data-pkmn-card = 'nest-ball'> Nest Ball </li>
-    <li data-pkmn-card = 'nest-ball'> Nest Ball </li>
-    <li data-pkmn-card = 'energy-recycler'> Energy Recycler </li>
-    <li data-pkmn-card = 'energy-recycler'> Energy Recycler </li>
-    <li data-pkmn-card = 'energy-recycler'> Energy Recycler </li>
-    <li data-pkmn-card = 'energy-recycler'> Energy Recycler </li>
-    <li data-pkmn-card = 'lost-vacuum'> Lost Vacuum </li>
-    <li data-pkmn-card = 'lost-vacuum'> Lost Vacuum </li>
-    <li data-pkmn-card = 'super-rod'> Super Rod </li>
-    <li data-pkmn-card = 'super-rod'> Super Rod </li>
-    <li data-pkmn-card = 'echoing-horn'> Echoing Horn </li>
-    <li data-pkmn-card = 'hisuian-heavy-ball'> Hisuian Heavy Ball </li>
-    <li data-pkmn-card = 'pal-pad'> Pal Pad </li>
-    <li data-pkmn-card = 'forest-seal-stone'> Forest Seal Stone </li>
+            <!-- Pokemon -->
+            <li data-pkmn-card='comfey1'> Comfey 1 </li>
+            <li data-pkmn-card='comfey2'> Comfey2 </li>
+            <li data-pkmn-card='comfey3'> Comfey3 </li>
+            <li data-pkmn-card='comfey4'> Comfey4 </li>
+            <li data-pkmn-card='sableye1'> Sableye1 </li>
+            <li data-pkmn-card='sableye2'> Sableye2 </li>
+            <li data-pkmn-card='kyogre'> Kyogre </li>
+            <li data-pkmn-card='dragonite'> Dragonite </li>
+            <li data-pkmn-card='cramorant'> Cramorant </li>
+            <li data-pkmn-card='radiant-greninja'> Radiant Greninja </li>
+            <li data-pkmn-card='raikou'> Raikou </li>
+            <li data-pkmn-card='manaphy'> Manaphy </li>
+
+            <!-- Energy -->
+            <li data-pkmn-card='water-energy'> Water Energy </li>
+            <li data-pkmn-card='water-energy'> Water Energy </li>
+            <li data-pkmn-card='water-energy'> Water Energy </li>
+            <li data-pkmn-card='water-energy'> Water Energy </li>
+            <li data-pkmn-card='water-energy'> Water Energy </li>
+            <li data-pkmn-card='electric-energy'> Electric Energy </li>
+            <li data-pkmn-card='electric-energy'> Electric Energy </li>
+            <li data-pkmn-card='electric-energy'> Electric Energy </li>
+            <li data-pkmn-card='psychic-energy'> Psychic Energy </li>
+            <li data-pkmn-card='psychic-energy'> Psychic Energy </li>
+            <li data-pkmn-card='psychic-energy'> Psychic Energy </li>
+
+            <!-- Trainers/Items -->
+            <li data-pkmn-card='klara'> Klara </li>
+            <li data-pkmn-card='pokestop'> PokeStop </li>
+            <li data-pkmn-card='escape-rope'> Escape Rope </li>
+            <li data-pkmn-card='escape-rope'> Escape Rope </li>
+            <li data-pkmn-card='escape-rope'> Escape Rope </li>
+            <li data-pkmn-card='escape-rope'> Escape Rope </li>
+            <li data-pkmn-card='mirage-gate'> Mirage Gate </li>
+            <li data-pkmn-card='battle-vip-pass'> Battle VIP Pass </li>
+            <li data-pkmn-card='battle-vip-pass'> Battle VIP Pass </li>
+            <li data-pkmn-card='battle-vip-pass'> Battle VIP Pass </li>
+            <li data-pkmn-card='battle-vip-pass'> Battle VIP Pass </li>
+            <li data-pkmn-card='switch-cart'> Switch Cart </li>
+            <li data-pkmn-card='nest-ball'> Nest Ball </li>
+            <li data-pkmn-card='nest-ball'> Nest Ball </li>
+            <li data-pkmn-card='nest-ball'> Nest Ball </li>
+            <li data-pkmn-card='energy-recycler'> Energy Recycler </li>
+            <li data-pkmn-card='energy-recycler'> Energy Recycler </li>
+            <li data-pkmn-card='energy-recycler'> Energy Recycler </li>
+            <li data-pkmn-card='energy-recycler'> Energy Recycler </li>
+            <li data-pkmn-card='lost-vacuum'> Lost Vacuum </li>
+            <li data-pkmn-card='lost-vacuum'> Lost Vacuum </li>
+            <li data-pkmn-card='super-rod'> Super Rod </li>
+            <li data-pkmn-card='super-rod'> Super Rod </li>
+            <li data-pkmn-card='echoing-horn'> Echoing Horn </li>
+            <li data-pkmn-card='hisuian-heavy-ball'> Hisuian Heavy Ball </li>
+            <li data-pkmn-card='pal-pad'> Pal Pad </li>
+            <li data-pkmn-card='forest-seal-stone'> Forest Seal Stone </li>
         </ul>
-    <h2>End of Deck</h2>
+        <h2>End of Deck</h2>
 
-    <!-- Make the empty list that will be used for the hand creation -->
-    <ul id = 'user-hand'></ul>
+        <!-- Make the empty list that will be used for the hand creation -->
+        <ul id='user-hand'></ul>
 
-    <!-- Time to create the first button: Deal Hand -->
-    <button onclick = 'createHand()'> Deal Hand </button>
+        <!-- Time to create the first button: Deal Hand -->
+        <button onclick='createHand()'> Deal Hand </button>
 
-    <!-- Now for the Draw button -->
-    <button onclick = 'addCard()'> Draw </button>
+        <!-- Now for the Draw button -->
+        <button onclick='addCard()'> Draw </button>
 
-    <!-- Use JavaScript to make functions for the "Deal Hand" and "Draw" buttons below -->
-    <script>
-        // Create a global array that will hold the drawn cards so that no cards get drawn twice
-        let drawnCardIndices = [];
+    </div> <!-- Close the all-elements div -->
+            <!-- Use JavaScript to make functions for the "Deal Hand" and "Draw" buttons below -->
+            <script>
+                // Create a global array that will hold the drawn cards so that no cards get drawn twice
+                let drawnCardIndices = [];
 
-        // Create a function that clears the user's current hand
-        // signature: deleteHand(): void -> void
+                // Create a function that clears the user's current hand
+                // signature: deleteHand(): void -> void
 
-        // purpose: expects nothing and returns nothing with the side-effect of
-        //          delting all of the cards in the hand that the user has been dealt
+                // purpose: expects nothing and returns nothing with the side-effect of
+                //          delting all of the cards in the hand that the user has been dealt
 
-        function deleteHand()
-        {
-            const HAND = document.getElementById('user-hand');
-            HAND.innerHTML = '';
-        }
-
-        // Create a function that makes a new hand of 7 random cards from the deck
-        // signature: createHand(): void -> void
-
-        // purpose: expects nothing and returns nothing with the side-effect of
-        //          calling the deleteHand() function and then giving the user
-        //          seven randomly generated cards from the deck of 50
-
-        function createHand()
-        {
-            deleteHand(); // Clear whatever is currently in the user's hand
-
-            // Accessing the list of the cards in the deck and giving it a variable declaration
-            const CARDS = document.getElementById('pkmn-card-list');
-            // Accessing a currently empty list that will be filled with 7 random cards from the deck
-            const HAND = document.getElementById('user-hand');
-            // Copying all of the cards from the deck and putting it into a node list
-            const NODE_LIST_OF_CARDS = CARDS.querySelectorAll('li');
-
-            // Creating a for loop to go through the Node List and pick 7 cards at random
-            for (let a = 0; a < 7; ++a)
-            {
-                let randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length); // generate rand num between 0 and the length of the node list of cards
-
-                // Use the include function to determine if the random generation would result in drawing a duplicate card
-                if (!drawnCardIndices.includes(randomCard)) // Check if the randomCard (index) has not already been drawn
-                {
-                    drawnCardIndices.push(randomCard); // Add the random card to the drawnCards array
+                function deleteHand() {
+                    const HAND = document.getElementById('user-hand');
+                    HAND.innerHTML = '';
                 }
-                else
-                {
-                    while (drawnCardIndices.includes(randomCard)) // If it has been drawn, randomly generate a card until a unique card (index) has been drawn
-                    {
-                        randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length);
+
+                // Create a function that makes a new hand of 7 random cards from the deck
+                // signature: createHand(): void -> void
+
+                // purpose: expects nothing and returns nothing with the side-effect of
+                //          calling the deleteHand() function and then giving the user
+                //          seven randomly generated cards from the deck of 50
+
+                function createHand() {
+                    deleteHand(); // Clear whatever is currently in the user's hand
+
+                    // Accessing the list of the cards in the deck and giving it a variable declaration
+                    const CARDS = document.getElementById('pkmn-card-list');
+                    // Accessing a currently empty list that will be filled with 7 random cards from the deck
+                    const HAND = document.getElementById('user-hand');
+                    // Copying all of the cards from the deck and putting it into a node list
+                    const NODE_LIST_OF_CARDS = CARDS.querySelectorAll('li');
+
+                    // Creating a for loop to go through the Node List and pick 7 cards at random
+                    for (let a = 0; a < 7; ++a) {
+                        let randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length); // generate rand num between 0 and the length of the node list of cards
+
+                        // Use the include function to determine if the random generation would result in drawing a duplicate card
+                        if (!drawnCardIndices.includes(randomCard)) // Check if the randomCard (index) has not already been drawn
+                        {
+                            drawnCardIndices.push(randomCard); // Add the random card to the drawnCards array
+                        }
+                        else {
+                            while (drawnCardIndices.includes(randomCard)) // If it has been drawn, randomly generate a card until a unique card (index) has been drawn
+                            {
+                                randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length);
+                            }
+
+                            drawnCardIndices.push(randomCard); // Now that we have a unique index, add the randomCard (index) to the array
+                        }
+
+                        const HAND_CARD = NODE_LIST_OF_CARDS[randomCard]; // get the list element at index of randomCard
+                        const NEW_HAND_CARD = HAND_CARD.cloneNode(true); // clone it
+
+                        HAND.appendChild(NEW_HAND_CARD); // add it to the HAND list
+
+                        const idOfCard = HAND_CARD.getAttribute('data-pkmn-card'); /* access the pokemon card data from the current card */
+                        if (idOfCard) /* Check if the pokemon card data is not undefined or null */ {
+                            const cardContainer = document.getElementById('cardContainers'); /* Look for cards only in this container */
+                            const theCard = document.querySelector(`#${idOfCard}`); /* dynamically create a CSS selector for idOfCard to select the right card with a matching ID */
+
+                            const newCardClone = theCard.cloneNode(true); /* create the clone of the card */
+                            HAND.appendChild(newCardClone); /* add the card to the HAND list */
+
+                        }
                     }
-
-                    drawnCardIndices.push(randomCard); // Now that we have a unique index, add the randomCard (index) to the array
                 }
 
-                const HAND_CARD = NODE_LIST_OF_CARDS[randomCard]; // get the list element at index of randomCard
-                const NEW_HAND_CARD = HAND_CARD.cloneNode(true); // clone it
+                // Create the function that will allow the user to draw a card. It basically does the same thing as createHand but only one time instead of seven
+                // signature: addCard(): void -> void
 
-                HAND.appendChild(NEW_HAND_CARD); // add it to the HAND list
+                // purpose: expects nothing and returns nothing with the side-effect of
+                //          adding one random card to the user's current hand
 
-                const idOfCard = HAND_CARD.getAttribute('data-pkmn-card'); /* access the pokemon card data from the current card */
-                if (idOfCard) /* Check if the pokemon card data is not undefined or null */
-                {
-                    const cardContainer = document.getElementById('cardContainers'); /* Look for cards only in this container */
-                    const theCard = document.querySelector(`#${idOfCard}`); /* dynamically create a CSS selector for idOfCard to select the right card with a matching ID */
+                function addCard() {
+                    if (drawnCardIndices.length < 50) {
+                        const CARDS = document.getElementById('pkmn-card-list'); // Access the original deck of 50 cards
+                        const HAND = document.getElementById('user-hand'); // Access the user's hand
+                        const NODE_LIST_OF_CARDS = CARDS.querySelectorAll('li'); // Copy all of the cards and put them into a node list again
 
-                    const newCardClone = theCard.cloneNode(true); /* create the clone of the card */
-                    HAND.appendChild(newCardClone); /* add the card to the HAND list */
+                        let randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length); // generate random number that will be used as an index
+                        const HAND_CARD = NODE_LIST_OF_CARDS[randomCard]; /* Get the list element */
 
-                }
-            }
-        }
+                        // Use the same exact check as in the createHand() function
+                        if (!drawnCardIndices.includes(randomCard)) {
+                            drawnCardIndices.push(randomCard);
+                        }
+                        else {
+                            while (drawnCardIndices.includes(randomCard)) {
+                                randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length);
+                            }
 
-        // Create the function that will allow the user to draw a card. It basically does the same thing as createHand but only one time instead of seven
-        // signature: addCard(): void -> void
+                            drawnCardIndices.push(randomCard);
+                        }
 
-        // purpose: expects nothing and returns nothing with the side-effect of
-        //          adding one random card to the user's current hand
+                        console.log("randomCard: ", randomCard);
+                        console.log("NODE_LIST_OF_CARDS.length is", NODE_LIST_OF_CARDS.length);
+                        console.log("Selected card: ", NODE_LIST_OF_CARDS[randomCard]);
+                        // Clone the list element and add it to the user-hand list
+                        const NEW_HAND_CARD = HAND_CARD.cloneNode(true);
+                        HAND.appendChild(NEW_HAND_CARD);
 
-        function addCard()
-        {
-            if (drawnCardIndices.length < 50)
-            {
-                const CARDS = document.getElementById('pkmn-card-list'); // Access the original deck of 50 cards
-                const HAND = document.getElementById('user-hand'); // Access the user's hand
-                const NODE_LIST_OF_CARDS = CARDS.querySelectorAll('li'); // Copy all of the cards and put them into a node list again
 
-                let randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length); // generate random number that will be used as an index
-                const HAND_CARD = NODE_LIST_OF_CARDS[randomCard]; /* Get the list element */
+                        const idOfCard = HAND_CARD.getAttribute('data-pkmn-card');
+                        if (idOfCard) {
+                            const cardContainer = document.getElementById('cardContainers');
+                            const theCard = document.querySelector(`#${idOfCard}`); /* find card with the matching ID */
 
-                // Use the same exact check as in the createHand() function
-                if (!drawnCardIndices.includes(randomCard))
-                {
-                    drawnCardIndices.push(randomCard);
-                }
-                else
-                {
-                    while (drawnCardIndices.includes(randomCard))
-                    {
-                        randomCard = Math.floor(Math.random() * NODE_LIST_OF_CARDS.length);
+                            const newCardClone = theCard.cloneNode(true);
+                            HAND.appendChild(newCardClone);
+                        }
                     }
+                }
+            </script>
 
-                    drawnCardIndices.push(randomCard);
+            <!-- TIME TO MAKE THE CARDS -->
+            <style>
+                /* Adjust all elements at once, inside of the web page */
+                /* #all-elements {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                } */
+
+                /* style the list of all pokemon cards in the deck */
+                #pkmn-card-list {
+                    margin-bottom: 10px;
+                    list-style-type: none;
+                    padding: 0px;
                 }
 
-                console.log("randomCard: ", randomCard);
-                console.log("NODE_LIST_OF_CARDS.length is", NODE_LIST_OF_CARDS.length);
-                console.log("Selected card: ", NODE_LIST_OF_CARDS[randomCard]);
-                // Clone the list element and add it to the user-hand list
-                const NEW_HAND_CARD = HAND_CARD.cloneNode(true);
-                HAND.appendChild(NEW_HAND_CARD);
+                /* style the user's hand, such as making it appear horizontal */
+                #user-hand {
+                    display: flex;
+                    flex-wrap: wrap; /* If the cards make it to the right of the viewport, wrap them around and start a new line */
+                    flex-direction: column;
+                    list-style-type: none; /* hide the bullet points */
+                    padding: 0px; /* remove the padding and add a margin instead for the same purpose */
+                    gap: 10px; /* add 10px of spacing above/below and left/right */
+                    align-items: center;
 
+                    /* Always force it to occupy space, so that the buttons still appear even when the hand is not displayed */
+                    /* */
 
-                const idOfCard = HAND_CARD.getAttribute('data-pkmn-card');
-                if (idOfCard)
-                {
-                    const cardContainer = document.getElementById('cardContainers');
-                    const theCard = document.querySelector(`#${idOfCard}`); /* find card with the matching ID */
+                    flex-grow: 1; /* let the card take up as much vertical space as has been allocated for it */
+                    /* min-height: 10px; /* make it so that there is some space where the userHand would be, even if it's not created yet. So, the buttons that are supposed to appear below it, always appear.*/
+                    max-height: calc(100vh - 270px); /* Allocate exactly 270px for the card on the viewport, in other words don't let the list go past viewport height - card height */
 
-                    const newCardClone = theCard.cloneNode(true);
-                    HAND.appendChild(newCardClone);
                 }
-            }
-        }
-    </script>
 
-    <!-- TIME TO MAKE THE CARDS -->
-    <style>
-        .pkmn-card-list
-        {
-            flex-grow: 1; /* let the card take up as much vertical space as has been allocated for it */
-            overflow-y: auto; /* Add a scroll bar if the card ends up off viewport */
-            max-height: calc(100vh - 270px); /* Allocate exactly 270px for the card on the viewport, in other words don't let the list go past viewport height - card height */
-        }
+                * {
+                    /* do this globally with the universal selector: '*' */
+                    box-sizing: border-box;
+                    /* ensure that border and padding don't mess with any card sizes */
+                }
 
-        * { /* do this globally with the universal selector: '*' */
-            box-sizing: border-box; /* ensure that border and padding don't mess with any card sizes */
-          }
-    /* Web Page Format */
-        body
-        {
-            background-color: #2b2a2a; /* background of web page is dark gray */
-            display: flex; /* the web page is using flex, so that the cards can be placed based on other elements in the web page such as list elements */
-            flex-direction: column; /* the cards will appear vertically due to the column format */
-            align-items: start; /* Have everything on the left side of the page and onwards */
-            height: 100vh; /* card is 100% of the height of the page that's currently visible */
-            margin: 0; /* removes the margin around the body that some browsers add automatically */
-            font-family: 'Lucida Console'; /* make the font retro style */
-            /*change font color to white*/
-        }
+                /* Web Page Format */
+                body {
+                    background-color: #2b2a2a;
+                    /* background of web page is dark gray */
+                    display: flex;
+                    /* the web page is using flex */
+                    flex-direction: column; /* the cards will appear vertically due to the column format */
+                    align-items: center;
+                    /* Have everything on the left side of the page and onwards */
+                    height: 100vh;
+                    /* card is 100% of the height of the page that's currently visible */
+                    margin: 0;
+                    /* removes the margin around the body that some browsers add automatically */
+                    font-family: 'Lucida Console';
+                    /* make the font retro style */
+                    /*change font color to white*/
+                }
 
-    /* Comfey1 */
-        .comfey1-card
-        {
-            width: 200px;
-            height: 270px;
-            border-radius: 18px;  /* rounds card edges */
-            background-color: #ba0277; /* background color of card is dark pink */
-            border: 11px solid #ffc403; /* solid yellow border around card */
-            padding: 10px; /* 10px of blank space surrounding card so cards aren't directly next to each other */
-            display: grid; /* styling of the card itself will be in grid format */
-            grid-template-rows: auto 1fr auto; /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
-            align-items: stretch; /* make the cards size not be based on it's content */
-            flex-shrink: 0; /* This stops the card from ever shrinking */
-        }
+                /* Comfey1 */
+                .comfey1-card {
+                    width: 200px;
+                    height: 270px;
+                    border-radius: 18px;
+                    /* rounds card edges */
+                    background-color: #ba0277;
+                    /* background color of card is dark pink */
+                    border: 11px solid #ffc403;
+                    /* solid yellow border around card */
+                    padding: 10px;
+                    /* 0px of blank space surrounding card so cards aren't directly next to each other */
+                    display: grid;
+                    /* styling of the card itself will be in grid format */
+                    grid-template-rows: auto 1fr auto;
+                    /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
+                    align-items: stretch;
+                    place-items: center; /* keep everything in the card center-aligned */
+                    /* make the cards size not be based on it's content */
+                    flex-shrink: 0;
+                    /* This stops the card from ever shrinking */
+                }
 
-    /* Comfey2 (will use the same layout for Comfey3, Comfey4, Sableye1, Sableye2) */
-        .comfey2-card
-        {
-            width: 200px;
-            height: 270px;
-            border-radius: 18px;  /* rounds card edges */
-            background-color: #b04fff; /* background color of card is dark pink */
-            border: 11px solid #ffc403; /* solid yellow border around card */
-            padding: 10px; /* 10px of blank space surrounding card so cards aren't directly next to each other */
-            display: grid; /* styling of the card itself will be in grid format */
-            grid-template-rows: auto 1fr auto; /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
-            align-items: stretch; /* make the cards size not be based on it's content */
-            flex-shrink: 0; /* This stops the card from ever shrinking */
-        }
+                /* Comfey2 (will use the same layout for Comfey3, Comfey4, Sableye1, Sableye2) */
+                .comfey2-card {
+                    width: 200px;
+                    height: 270px;
+                    border-radius: 18px;
+                    /* rounds card edges */
+                    background-color: #b04fff;
+                    /* background color of card is dark pink */
+                    border: 11px solid #ffc403;
+                    /* solid yellow border around card */
+                    padding: 10px;
+                    /* 0px of blank space surrounding card so cards aren't directly next to each other */
+                    display: grid;
+                    /* styling of the card itself will be in grid format */
+                    grid-template-rows: auto 1fr auto;
+                    /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
+                    align-items: stretch;
+                    place-items: center;
+                    /* make the cards size not be based on it's content */
+                    flex-shrink: 0;
+                    /* This stops the card from ever shrinking */
+                }
 
-    /* Kyogre (will use the same layout for Cramorant, Radiant Greninja, Manaphy) */
-        .kyogre-card
-        {
-            width: 200px;
-            height: 270px;
-            border-radius: 18px;  /* rounds card edges */
-            background-color: #43a8fa; /* background color of card is dark pink */
-            border: 11px solid #ffc403; /* solid yellow border around card */
-            padding: 10px; /* 10px of blank space surrounding card so cards aren't directly next to each other */
-            display: grid; /* styling of the card itself will be in grid format */
-            grid-template-rows: auto 1fr auto; /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
-            align-items: stretch; /* make the cards size not be based on it's content */
-            flex-shrink: 0; /* This stops the card from ever shrinking */
-        }
+                /* Kyogre (will use the same layout for Cramorant, Radiant Greninja, Manaphy) */
+                .kyogre-card {
+                    width: 200px;
+                    height: 270px;
+                    border-radius: 18px;
+                    /* rounds card edges */
+                    background-color: #43a8fa;
+                    /* background color of card is dark pink */
+                    border: 11px solid #ffc403;
+                    /* solid yellow border around card */
+                    padding: 10px;
+                    /* 0px of blank space surrounding card so cards aren't directly next to each other */
+                    display: grid;
+                    /* styling of the card itself will be in grid format */
+                    grid-template-rows: auto 1fr auto;
+                    /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
+                    align-items: stretch;
+                    place-items: center;
+                    /* make the cards size not be based on it's content */
+                    flex-shrink: 0;
+                    /* This stops the card from ever shrinking */
+                }
 
-    /* Dragonite */
-        .dragonite-card
-        {
-            width: 200px;
-            height: 270px;
-            border-radius: 18px;  /* rounds card edges */
-            background-color: #fae243; /* background color of card is dark pink */
-            border: 11px solid #ffc403; /* solid yellow border around card */
-            padding: 10px; /* 10px of blank space surrounding card so cards aren't directly next to each other */
-            display: grid; /* styling of the card itself will be in grid format */
-            grid-template-rows: auto 1fr auto; /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
-            align-items: stretch; /* make the cards size not be based on it's content */
-            flex-shrink: 0; /* This stops the card from ever shrinking */
-        }
+                /* Dragonite */
+                .dragonite-card {
+                    width: 200px;
+                    height: 270px;
+                    border-radius: 18px;
+                    /* rounds card edges */
+                    background-color: #fae243;
+                    /* background color of card is dark pink */
+                    border: 11px solid #ffc403;
+                    /* solid yellow border around card */
+                    padding: 10px;
+                    /* 0px of blank space surrounding card so cards aren't directly next to each other */
+                    display: grid;
+                    /* styling of the card itself will be in grid format */
+                    grid-template-rows: auto 1fr auto;
+                    /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
+                    align-items: stretch;
+                    place-items: center;
+                    /* make the cards size not be based on it's content */
+                    flex-shrink: 0;
+                    /* This stops the card from ever shrinking */
+                }
 
-    /* Raikou */
-        .raikou-card
-        {
-            width: 200px;
-            height: 270px;
-            border-radius: 18px;  /* rounds card edges */
-            background-color: #f2d129; /* background color of card is dark pink */
-            border: 11px solid #ffc403; /* solid yellow border around card */
-            padding: 10px; /* 10px of blank space surrounding card so cards aren't directly next to each other */
-            display: grid; /* styling of the card itself will be in grid format */
-            grid-template-rows: auto 1fr auto; /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
-            align-items: stretch; /* make the cards size not be based on it's content */
-            flex-shrink: 0; /* This stops the card from ever shrinking */
-        }
+                /* Raikou */
+                .raikou-card {
+                    width: 200px;
+                    height: 270px;
+                    border-radius: 18px;
+                    /* rounds card edges */
+                    background-color: #f2d129;
+                    /* background color of card is dark pink */
+                    border: 11px solid #ffc403;
+                    /* solid yellow border around card */
+                    padding: 10px;
+                    /* 0px of blank space surrounding card so cards aren't directly next to each other */
+                    display: grid;
+                    /* styling of the card itself will be in grid format */
+                    grid-template-rows: auto 1fr auto;
+                    /* top and bottom of card will automatically adjust in size for content to fit, the middle of the card will be however much space is left */
+                    align-items: stretch;
+                    place-items: center;
+                    /* make the cards size not be based on it's content */
+                    flex-shrink: 0;
+                    /* This stops the card from ever shrinking */
+                }
 
-    /* Water Energy */
-        .water-energy-card
-        {
-            width: 200px;
-            height: 270px;
-            border-radius: 18px;  /* rounds card edges */
-            background-color: #43a8fa; /* background color of card is dark pink */
-            border: 11px solid #ffc403; /* solid yellow border around card */
-            padding: 10px; /* 10px of blank space surrounding card so cards aren't directly next to each other */
-            display: grid; /* styling of the card itself will be in grid format */
-            grid-template-rows: auto; /* top and bottom of card will automatically adjust in size for content to fit */
-            align-items: stretch; /* make the cards size not be based on it's content */
-            flex-shrink: 0; /* This stops the card from ever shrinking */
-        }
+                /* Water Energy */
+                .water-energy-card {
+                    width: 200px;
+                    height: 270px;
+                    border-radius: 18px;
+                    /* rounds card edges */
+                    background-color: #43a8fa;
+                    /* background color of card is dark pink */
+                    border: 11px solid #ffc403;
+                    /* solid yellow border around card */
+                    padding: 10px;
+                    /* 0px of blank space surrounding card so cards aren't directly next to each other */
+                    display: grid;
+                    /* styling of the card itself will be in grid format */
+                    grid-template-rows: auto;
+                    /* top and bottom of card will automatically adjust in size for content to fit */
+                    align-items: stretch;
+                    place-items: center;
+                    /* make the cards size not be based on it's content */
+                    flex-shrink: 0;
+                    /* This stops the card from ever shrinking */
+                }
 
-    /* Electric Energy */
-        .electric-energy-card
-        {
-            width: 200px;
-            height: 270px;
-            border-radius: 18px;  /* rounds card edges */
-            background-color: #f2d129; /* background color of card is dark pink */
-            border: 11px solid #ffc403; /* solid yellow border around card */
-            padding: 10px; /* 10px of blank space surrounding card so cards aren't directly next to each other */
-            display: grid; /* styling of the card itself will be in grid format */
-            grid-template-rows: auto; /* top and bottom of card will automatically adjust in size for content to fit */
-            align-items: stretch; /* make the cards size not be based on it's content */
-            flex-shrink: 0; /* This stops the card from ever shrinking */
-        }
+                /* Electric Energy */
+                .electric-energy-card {
+                    width: 200px;
+                    height: 270px;
+                    border-radius: 18px;
+                    /* rounds card edges */
+                    background-color: #f2d129;
+                    /* background color of card is dark pink */
+                    border: 11px solid #ffc403;
+                    /* solid yellow border around card */
+                    padding: 10px;
+                    /* 0px of blank space surrounding card so cards aren't directly next to each other */
+                    display: grid;
+                    /* styling of the card itself will be in grid format */
+                    grid-template-rows: auto;
+                    /* top and bottom of card will automatically adjust in size for content to fit */
+                    align-items: stretch;
+                    place-items: center;
+                    /* make the cards size not be based on it's content */
+                    flex-shrink: 0;
+                    /* This stops the card from ever shrinking */
+                }
 
-    /* Psychic Energy */
-        .psychic-energy-card
-        {
-            width: 200px;
-            height: 270px;
-            border-radius: 18px;  /* rounds card edges */
-            background-color: #b04fff; /* background color of card is dark pink */
-            border: 11px solid #ffc403; /* solid yellow border around card */
-            padding: 10px; /* 10px of blank space surrounding card so cards aren't directly next to each other */
-            display: grid; /* styling of the card itself will be in grid format */
-            grid-template-rows: auto; /* top and bottom of card will automatically adjust in size for content to fit */
-            align-items: stretch; /* make the cards size not be based on it's content */
-            flex-shrink: 0; /* This stops the card from ever shrinking */
-        }
+                /* Psychic Energy */
+                .psychic-energy-card {
+                    width: 200px;
+                    height: 270px;
+                    border-radius: 18px;
+                    /* rounds card edges */
+                    background-color: #b04fff;
+                    /* background color of card is dark pink */
+                    border: 11px solid #ffc403;
+                    /* solid yellow border around card */
+                    padding: 10px;
+                    /* 0px of blank space surrounding card so cards aren't directly next to each other */
+                    display: grid;
+                    /* styling of the card itself will be in grid format */
+                    grid-template-rows: auto;
+                    /* top and bottom of card will automatically adjust in size for content to fit */
+                    align-items: stretch;
+                    place-items: center;
+                    /* make the cards size not be based on it's content */
+                    flex-shrink: 0;
+                    /* This stops the card from ever shrinking */
+                }
 
-    /* Class used for all energy cards */
-        .energy-card-name-img
-        {
-            display: grid;
-            grid-template-rows: 1fr;
-            /* note: I need to do something about how the HP should be aligned at the "end" of the card but on the same line as the name */
-            font-size: 20px;
-            font-weight: bold; /* make the font bold */
-            /* color: #43a8fa; /* Change the color of the font of the title of the card to be the same as the background */
-        }
+                /* Class used for all energy cards */
+                .energy-card-name-img {
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    /* note: I need to do something about how the HP should be aligned at the "end" of the card but on the same line as the name */
+                    font-size: 20px;
+                    font-weight: bold;
+                    place-items: center;
+                    /* make the font bold */
+                    /* color: #43a8fa; /* Change the color of the font of the title of the card to be the same as the background */
+                }
 
-    /* The following classes are used for all Trainer pokemon cards (Supporters, Items, and Stadiums) */
-        .trainer-card-title
-        {
-            display: grid;
-            grid-template-rows: 1fr;
-            /* note: I need to do something about how the HP should be aligned at the "end" of the card but on the same line as the name */
-            font-size: 25;
-            font-weight: bold; /* make the font bold */
-            color: #9e9d99 /* make the font color gray */
-        }
+                /* The following classes are used for all Trainer pokemon cards (Supporters, Items, and Stadiums) */
+                .trainer-card {
+                    width: 200px;
+                    height: 270px;
+                    border-radius: 18px;
+                    /* rounds card edges */
+                    background-color: #bab9b3;
+                    /* background color of card is dark pink */
+                    border: 11px solid #ffc403;
+                    /* solid yellow border around card */
+                    padding: 10px;
+                    /* 0px of blank space surrounding card so cards aren't directly next to each other */
+                    display: grid;
+                    /* styling of the card itself will be in grid format */
+                    grid-template-rows: auto;
+                    /* top and bottom of card will automatically adjust in size for content to fit */
+                    align-items: stretch;
+                    place-items: center;
+                    /* make the cards size not be based on it's content */
+                    flex-shrink: 0;
+                    /* This stops the card from ever shrinking */
+                }
 
-        .trainer-desc
-        {
-            grid-template-rows: 1fr;
-            display: grid;
-            place-items: center;
-            font-size: 7px; /* font size of move titles is 10 pixels */
-            height: 100%;
-        }
-        /* Note: Trainer cards inherit the classes: .card-name-img and .card-bottom */
+                .trainer-card-title {
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    /* note: I need to do something about how the HP should be aligned at the "end" of the card but on the same line as the name */
+                    font-size: 25;
+                    font-weight: bold;
+                    /* make the font bold */
+                    color: #9e9d99
+                        /* make the font color gray */
+                }
 
-    /* The following classes are used for all pokemon cards containing actual pokemon */
-        .card-name-img
-        {
-            display: grid;
-            grid-template-rows: 1fr;
-            /* note: I need to do something about how the HP should be aligned at the "end" of the card but on the same line as the name */
-            font-size: 20px;
-            font-weight: bold; /* make the font bold */
-        }
+                .trainer-desc {
+                    grid-template-rows: 1fr;
+                    display: grid;
+                    place-items: center;
+                    font-size: 7px;
+                    /* font size of move titles is 10 pixels */
+                    height: 100%;
+                }
 
-        .pkmn-img img
-        {
-            grid-template-rows: 1fr 1fr;
-            display: grid;
-            width: 160px;
-            height: 100px;
-            height: 100%;
-        }
+                /* Note: Trainer cards inherit the classes: .card-name-img and .card-bottom */
 
-        .card-move-titles
-        {
-            grid-template-rows: 1fr;
-            display: grid;
-            place-items: center;
-            font-size: 10px; /* font size of move titles is 10 pixels */
-            font-weight: bold;
-            height: 100%;
-        }
+                /* The following classes are used for all pokemon cards containing actual pokemon */
+                .card-name-img {
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    /* note: I need to do something about how the HP should be aligned at the "end" of the card but on the same line as the name */
+                    font-size: 20px;
+                    font-weight: bold;
+                    place-items: center;
+                    /* make the font bold */
+                }
 
-        .card-bottom
-        {
-            display: grid;
-            grid-template-rows: 1fr; /* fill the entire space with the weakness, resistance, and retreat cost of the pokemon */
-            font-size: 7px; /* Have the font size slightly larger than move-descriptions, but smaller than move-titles */
-            font-weight: bold;
-        }
-    </style>
-<body> <!-- division (<div>) is a block-level element, which makes it so that the card keeps it's height because each entire block is filled and stretches -->
-  <div id = "cardContainers" style = "display: none;"> <!-- Make sure that the cards aren't visible until they are put into the user's hand, using a container for all cards -->
-  <!-- Comfey1 -->
-    <div class = 'comfey1-card' id = 'comfey1'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Comfey HP70 </div> <!-- Comfey is the name of the pokemon, and it has 70 health points -->
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/comfey1.png" alt = "Comfey1">
+                .pkmn-img img {
+                    grid-template-rows: 1fr 1fr;
+                    display: grid;
+                    place-items: center;
+                    width: 160px;
+                    height: 100px;
+                    height: 100%;
+                }
+
+                .card-move-titles {
+                    grid-template-rows: 1fr;
+                    display: grid;
+                    place-items: center;
+                    font-size: 10px;
+                    /* font size of move titles is 10 pixels */
+                    font-weight: bold;
+                    height: 100%;
+                }
+
+                .card-bottom {
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    /* fill the entire space with the weakness, resistance, and retreat cost of the pokemon */
+                    font-size: 7px;
+                    /* Have the font size slightly larger than move-descriptions, but smaller than move-titles */
+                    font-weight: bold;
+                }
+            </style>
+
+            <body>
+                <!-- division (<div>) is a block-level element, which makes it so that the card keeps it's height because each entire block is filled and stretches -->
+                    <!-- Creating all of the cards using the classes that will be made in CSS below them -->
+        <div id="cardContainers" style="display: none;">
+            <!-- Make sure that the cards aren't visible until they are put into the user's hand, using a container for all cards -->
+            <!-- Comfey1 -->
+            <div class='comfey1-card' id='comfey1'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Comfey HP70 </div>
+                    <!-- Comfey is the name of the pokemon, and it has 70 health points -->
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/comfey1.png"
+                            alt="Comfey1">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Sweet Kiss 30 </div>
+                    <!-- Comfey has a move called Sweet Kiss that does 30 damage -->
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: Steal x 2 | resistance: Dark - 20 | retreat: 1 </div>
+                    <!-- Comfey takes double damage from steal types, 20 less damage from dark types and has a retreat cost of 1 energy -->
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Sweet Kiss 30 </div> <!-- Comfey has a move called Sweet Kiss that does 30 damage -->
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness: Steal x 2 | resistance: Dark - 20 | retreat: 1 </div> <!-- Comfey takes double damage from steal types, 20 less damage from dark types and has a retreat cost of 1 energy -->
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Comfey2 -->
-       <div class = 'comfey2-card' id = 'comfey2'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Comfey HP70 </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/comfey2.png" alt = "Comfey2">
+            <!-- Comfey2 -->
+            <div class='comfey2-card' id='comfey2'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Comfey HP70 </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/comfey2.png"
+                            alt="Comfey2">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Spinning Attack 30 </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: Steal x 2 | resistance: | retreat: 1 </div>
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Spinning Attack 30 </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness: Steal x 2 | resistance:           | retreat: 1 </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Comfey3 -->
-       <div class = 'comfey2-card' id = 'comfey3'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Comfey HP70 </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/comfey3.png" alt = "Comfey3">
+            <!-- Comfey3 -->
+            <div class='comfey2-card' id='comfey3'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Comfey HP70 </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/comfey3.png"
+                            alt="Comfey3">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Fade Out 30 </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: Steal x 2 | resistance: | retreat: 1 </div>
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Fade Out 30 </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness: Steal x 2 | resistance:           | retreat: 1 </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Comfey4 -->
-       <div class = 'comfey2-card' id = 'comfey4'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Comfey HP70 </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/comfey4.png" alt = "Comfey4">
+            <!-- Comfey4 -->
+            <div class='comfey2-card' id='comfey4'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Comfey HP70 </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/comfey4.png"
+                            alt="Comfey4">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Play Rough 20 </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: Steal x 2 | resistance: | retreat: 1 </div>
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Play Rough 20 </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness: Steal x 2 | resistance:           | retreat: 1 </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Sableye1 -->
-       <div class = 'comfey2-card' id = 'sableye1'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Sableye HP70 </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/sableye1.png" alt = "Sableye1">
+            <!-- Sableye1 -->
+            <div class='comfey2-card' id='sableye1'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Sableye HP70 </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/sableye1.png"
+                            alt="Sableye1">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Corner 40 </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: Dark x 2 | resistance: Fighting - 30 | retreat: 1 </div>
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Corner 40 </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness: Dark x 2 | resistance: Fighting - 30 | retreat: 1 </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Sableye2 -->
-       <div class = 'comfey2-card' id = 'sableye2'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Sableye HP80 </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/sableye2.png" alt = "Sableye2">
+            <!-- Sableye2 -->
+            <div class='comfey2-card' id='sableye2'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Sableye HP80 </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/sableye2.png"
+                            alt="Sableye2">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Scratch 20 </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: Dark x 2 | resistance: Fighting - 30 | retreat: 1 </div>
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Scratch 20 </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness: Dark x 2 | resistance: Fighting - 30 | retreat: 1 </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Kyogre -->
-       <div class = 'kyogre-card' id = 'kyogre'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Kyogre HP130 </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/kyogre.png" alt = "Kyogre">
+            <!-- Kyogre -->
+            <div class='kyogre-card' id='kyogre'> <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Kyogre HP130 </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/kyogre.png"
+                            alt="Kyogre">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Surf 120 </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: Electric x 2 | resistance: | retreat: 3 </div>
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Surf 120 </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness: Electric x 2 | resistance:           | retreat: 3 </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-   <!-- Dragonite -->
-       <div class = 'dragonite-card' id = 'dragonite'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Dragonite HP180 </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/dragonite.png" alt = "Dragonite">
+            <!-- Dragonite -->
+            <div class='dragonite-card' id='dragonite'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Dragonite HP180 </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/dragonite.png"
+                            alt="Dragonite">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Dragon Pulse 180 </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: | resistance: | retreat: 3 </div>
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Dragon Pulse 180 </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness:           | resistance:           | retreat: 3 </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Cramorant -->
-       <div class = 'kyogre-card' id = 'cramorant'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Cramorant HP110 </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/cramorant.png" alt = "Cramorant">
+            <!-- Cramorant -->
+            <div class='kyogre-card' id='cramorant'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Cramorant HP110 </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/cramorant.png"
+                            alt="Cramorant">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Spit Innocently 110 </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: Electric x 20 | resistance: | retreat: 1 </div>
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Spit Innocently 110 </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness: Electric x 20 | resistance:           | retreat: 1 </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Radiant Greninja -->
-       <div class = 'kyogre-card' id = 'radiant-greninja'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Radiant Greninja HP130 </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/radiant-greninja.png" alt = "Radiant Greninja">
+            <!-- Radiant Greninja -->
+            <div class='kyogre-card' id='radiant-greninja'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Radiant Greninja HP130 </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/radiant-greninja.png"
+                            alt="Radiant Greninja">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Mist Slash 100 </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: Electric x 20 | resistance: | retreat: 1 </div>
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Mist Slash 100 </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness: Electric x 20 | resistance:           | retreat: 1 </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Raikou -->
-       <div class = 'raikou-card' id = 'raikou'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Raikou HP120 </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/raikou.png" alt = "Raikou">
+            <!-- Raikou -->
+            <div class='raikou-card' id='raikou'> <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Raikou HP120 </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/raikou.png"
+                            alt="Raikou">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Electric Ball 90 </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: Fighting x 20 | resistance: Steal - 20 | retreat: 2 </div>
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Electric Ball 90 </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness: Fighting x 20 | resistance: Steal - 20 | retreat: 2 </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Manaphy -->
-       <div class = 'kyogre-card' id = 'manaphy'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Manaphy HP70 </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/manaphy.png" alt = "Manaphy">
+            <!-- Manaphy -->
+            <div class='kyogre-card' id='manaphy'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Manaphy HP70 </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/manaphy.png"
+                            alt="Manaphy">
+                    </div>
+                </div>
+                <div class='card-move-titles'>
+                    <div class='pkmn-move-dmg'> Wave Splash 30 </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> weakness: Electric x 20 | resistance: | retreat: 1 </div>
+                </div>
             </div>
-        </div>
-        <div class = 'card-move-titles'>
-            <div class = 'pkmn-move-dmg'> Wave Splash 30 </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> weakness: Electric x 20 | resistance:           | retreat: 1 </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Water Energy -->
-       <div class = 'water-energy-card' id = 'water-energy'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'energy-card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> ENERGY </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/water-energy.png" alt = "Water Energy">
+            <!-- Water Energy -->
+            <div class='water-energy-card' id='water-energy'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='energy-card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> ENERGY </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/water-energy.png"
+                            alt="Water Energy">
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Electric Energy -->
-       <div class = 'electric-energy-card' id = 'electric-energy'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'energy-card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> ENERGY </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/electric-energy.png" alt = "Electric Energy">
+            <!-- Electric Energy -->
+            <div class='electric-energy-card' id='electric-energy'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='energy-card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> ENERGY </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/electric-energy.png"
+                            alt="Electric Energy">
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Psychic Energy -->
-       <div class = 'psychic-energy-card' id = 'psychic-energy'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'energy-card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> ENERGY </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/psychic-energy.png" alt = "Psychic Energy">
+            <!-- Psychic Energy -->
+            <div class='psychic-energy-card' id='psychic-energy'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='energy-card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> ENERGY </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/psychic-energy.png"
+                            alt="Psychic Energy">
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-  <!-- Klara -->
-       <div class = 'klara-card' id = 'klara'> <!-- group the entire card and it's content onto the page in a box -->
-        <div class = 'trainer-card-title'> TRAINER  Supporter </div>
-        <div class = 'card-name-img'> <!-- top of card contains pokemon name and an image of it -->
-            <div class = 'pkmn-name'> Klara </div>
-            <div class = 'pkmn-img'>
-                <img src = "https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/klara.png" alt = "Manaphy">
+            <!-- Klara -->
+            <div class='trainer-card' id='klara'> <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Supporter </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Klara </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/klara.png"
+                            alt="Klara">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Put up to 2 Pokemon from your discard pile into your hand. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play only 1 Supporter card during your turn. </div>
+                </div>
             </div>
-        </div>
-        <div class = 'trainer-desc'>
-            <div class = 'pkmn-move-dmg'> Put up to 2 Pokemon from your discard pile into your hand. </div>
-        </div>
-        <div class = 'card-bottom'>
-            <div class = 'card-wrr'> You may play only 1 Supporter card during your turn. </div>
-        </div>
-    </div>
-  <!-- </div> -->
+            <!-- </div> -->
 
-</body>
+            <!-- PokeStop -->
+            <div class='trainer-card' id='pokestop'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Stadium </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> PokeStop </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/pokestop.png"
+                            alt="PokeStop">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Once during each player's turn, that player may discard 3 cards from the
+                        top of their deck. If a player discarded any Item cards in this way, they put those Item cards
+                        into their hand. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> This Stadium stays in play when you play it. Discard it if another Stadium
+                        comes into play. </div>
+                </div>
+            </div>
+            <!-- </div> -->
 
-</body>
+            <!-- Escape Rope -->
+            <div class='trainer-card' id='escape-rope'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Escape Rope </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/escape-rope.png"
+                            alt="Escape Rope">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Each player switches their Active Pokemon with 1 of their Benched
+                        Pokemon. Your opponent switches first. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Mirage Gate -->
+            <div class='trainer-card' id='mirage-gate'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Mirage Gate </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/mirage-gate.png"
+                            alt="Mirage Gate">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Search your deck for up to 2 basic Energy cards of different types and
+                        attach them to your Pokemon in any way you like. Then, shuffle your deck. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Battle VIP Pass -->
+            <div class='trainer-card' id='battle-vip-pass'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Battle VIP Pass </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/battle-vip-pass.png"
+                            alt="Battle VIP Pass">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> You can use this card only during your first turn. Search your deck for
+                        up to 2 Basic Pokemon and put them onto your Bench. Then, shuffle your deck. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Switch Cart -->
+            <div class='trainer-card' id='switch-cart'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Switch Cart </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/switch-cart.png"
+                            alt="Switch Cart">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Switch your Active Basic Pokemon with 1 of your Benched Pokemon. If you
+                        do, heal 30 damage from the Pokemon you moved to your Bench. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Nest Ball -->
+            <div class='trainer-card' id='nest-ball'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Nest Ball </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/nest-ball.png"
+                            alt="Nest Ball">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Search your deck for a Basic Pokemon and put it onto your Bench. Then,
+                        shuffle your deck. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Energy Recycler -->
+            <div class='trainer-card' id='energy-recycler'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Energy Recycler </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/energy-recycler.png"
+                            alt="Energy Recycler">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Shuffle up to 5 basic Energy cards from your discard pile into your
+                        deck. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Lost Vacuum -->
+            <div class='trainer-card' id='lost-vacuum'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Lost Vacuum </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/lost-vacuum.png"
+                            alt="Lost Vacuum">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Choose a Pokemon Tool attached to any Pokemon or any Stadium in play,
+                        and put it in the Lost Zone. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Super Rod -->
+            <div class='trainer-card' id='super-rod'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Super Rod </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/super-rod.png"
+                            alt="Super Rod">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Shuffle up to 3 in any combination of Pokemon and Basic Energy cards
+                        from your discard pile into your deck. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Echoing Horn -->
+            <div class='trainer-card' id='echoing-horn'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Echoing Horn </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/echoing-horn.png"
+                            alt="Echoing Horn">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Put a Basic Pokemon from your opponent's discard pile onto their Bench.
+                    </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Hisuian Heavy Ball -->
+            <div class='trainer-card' id='hisuian-heavy-ball'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Hisuian Heavy Ball </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/hisuian-heavy-ball.png"
+                            alt="Hisuian Heavy Ball">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Look at your face-down Prize cards. You may reveal a Basic Pokemon you
+                        find there, put it into your hand, and put this Hisuian Heavy Ball in its place as a face-down
+                        Prize card. Then shuffle your face-down Prize cards. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Pal Pad -->
+            <div class='trainer-card' id='pal-pad'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Pal Pad </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/pal-pad.png"
+                            alt="Pal Pad">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> Shuffle up to 2 Supporter cards from your discard pile into your deck.
+                    </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Forest Seal Stone -->
+            <div class='trainer-card' id='forest-seal-stone'>
+                <!-- group the entire card and it's content onto the page in a box -->
+                <div class='trainer-card-title'> TRAINER Item </div>
+                <div class='card-name-img'> <!-- top of card contains pokemon name and an image of it -->
+                    <div class='pkmn-name'> Forest Seal Stone </div>
+                    <div class='pkmn-img'>
+                        <img src="https://raw.githubusercontent.com/ohthy2222/Random-Hand-Simulator/refs/heads/main/images_of_pokemon/forest-seal-stone.png"
+                            alt="Forest Seal Stone">
+                    </div>
+                </div>
+                <div class='trainer-desc'>
+                    <div class='pkmn-move-dmg'> During your turn you may search your deck for a card and put it into
+                        your had. Then, shuffle your deck. </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-wrr'> You may play any number of Item cards during your turn. </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            </body>
+
+    </body>
+
 </html>
