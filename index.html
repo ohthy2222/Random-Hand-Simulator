@@ -77,10 +77,10 @@
         <ul id='user-hand'></ul>
 
         <!-- Time to create the first button: Deal Hand -->
-        <button onclick='createHand()'> Deal Hand </button>
+        <button id = 'deal-hand-button' onclick='createHand()'> Deal Hand </button>
 
         <!-- Now for the Draw button -->
-        <button onclick='addCard()'> Draw </button>
+        <button id = 'draw-button' onclick='addCard()'> Draw </button>
 
     </div> <!-- Close the all-elements div -->
             <!-- Use JavaScript to make functions for the "Deal Hand" and "Draw" buttons below -->
@@ -98,6 +98,26 @@
                     const HAND = document.getElementById('user-hand');
                     HAND.innerHTML = '';
                 }
+
+                // function overlappingCards()
+                // {
+                //     const HAND = document.getElementById('user-hand'); /* access the user's hand by id */
+                //     const NODE_LIST_OF_CARDS = HAND.children; /* get all elements of the user's hand */
+
+                //     for (let i = 0; i < NODE_LIST_OF_CARDS.length; ++i) /* loop this for how many elements there are in user-hand */
+                //     {
+                //         if (NODE_LIST_OF_CARDS.length > 7) /* for ever seven cards, make them overlap */
+                //         {
+                //             NODE_LIST_OF_CARDS[i].style.marginLeft = i * -50 + 'px'; /* cause the cards to progressively overlap more and more */
+                //             NODE_LIST_OF_CARDS[i].style.zIndex = i; /* the newest card always displays on top, because it will have the higher zIndex */
+                //         }
+                //         else
+                //         {
+                //             NODE_LIST_OF_CARDS[i].style.marginLeft = '0px'; /* if there are less than 7 cards, use default layout */
+                //             NODE_LIST_OF_CARDS[i].style.zIndex = 0; /*  */
+                //         }
+                //     }
+                // }
 
                 // Create a function that makes a new hand of 7 random cards from the deck
                 // signature: createHand(): void -> void
@@ -177,10 +197,6 @@
 
                             drawnCardIndices.push(randomCard);
                         }
-
-                        console.log("randomCard: ", randomCard);
-                        console.log("NODE_LIST_OF_CARDS.length is", NODE_LIST_OF_CARDS.length);
-                        console.log("Selected card: ", NODE_LIST_OF_CARDS[randomCard]);
                         // Clone the list element and add it to the user-hand list
                         const NEW_HAND_CARD = HAND_CARD.cloneNode(true);
                         HAND.appendChild(NEW_HAND_CARD);
@@ -201,37 +217,47 @@
             <!-- TIME TO MAKE THE CARDS -->
             <style>
                 /* Adjust all elements at once, inside of the web page */
-                /* #all-elements {
+                #all-elements
+                {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     width: 100%;
-                } */
+                }
 
                 /* style the list of all pokemon cards in the deck */
-                #pkmn-card-list {
+                #pkmn-card-list
+                {
                     margin-bottom: 10px;
                     list-style-type: none;
                     padding: 0px;
                 }
 
                 /* style the user's hand, such as making it appear horizontal */
-                #user-hand {
+                #user-hand
+                {
                     display: flex;
                     flex-wrap: wrap; /* If the cards make it to the right of the viewport, wrap them around and start a new line */
-                    flex-direction: column;
+                    flex-direction: row;
                     list-style-type: none; /* hide the bullet points */
                     padding: 0px; /* remove the padding and add a margin instead for the same purpose */
                     gap: 10px; /* add 10px of spacing above/below and left/right */
                     align-items: center;
+                    justify-content: start;
+                    color: black;
 
                     /* Always force it to occupy space, so that the buttons still appear even when the hand is not displayed */
                     /* */
 
+                    /* margin: 20px 0; */ /* Create blank space between the cards above and below so that they aren't as squished */
                     flex-grow: 1; /* let the card take up as much vertical space as has been allocated for it */
                     /* min-height: 10px; /* make it so that there is some space where the userHand would be, even if it's not created yet. So, the buttons that are supposed to appear below it, always appear.*/
-                    max-height: calc(100vh - 270px); /* Allocate exactly 270px for the card on the viewport, in other words don't let the list go past viewport height - card height */
+                    max-width: 100%; /* make sure the cards do not exceed the boundaries of the viewport */
+                }
 
+                #user-hand li
+                {
+                    font-size: 0; /* hide the text of the list-elements for the cards in the user's hand */
                 }
 
                 * {
@@ -241,7 +267,8 @@
                 }
 
                 /* Web Page Format */
-                body {
+                body
+                {
                     background-color: #2b2a2a;
                     /* background of web page is dark gray */
                     display: flex;
@@ -255,11 +282,13 @@
                     /* removes the margin around the body that some browsers add automatically */
                     font-family: 'Lucida Console';
                     /* make the font retro style */
-                    /*change font color to white*/
+                    color: white; /* change font color to white */
+                    overflow-x: hidden; /* force the page to disallow horizontal scrolling */
                 }
 
                 /* Comfey1 */
-                .comfey1-card {
+                .comfey1-card
+                {
                     width: 200px;
                     height: 270px;
                     border-radius: 18px;
@@ -282,7 +311,8 @@
                 }
 
                 /* Comfey2 (will use the same layout for Comfey3, Comfey4, Sableye1, Sableye2) */
-                .comfey2-card {
+                .comfey2-card
+                {
                     width: 200px;
                     height: 270px;
                     border-radius: 18px;
@@ -305,7 +335,8 @@
                 }
 
                 /* Kyogre (will use the same layout for Cramorant, Radiant Greninja, Manaphy) */
-                .kyogre-card {
+                .kyogre-card
+                {
                     width: 200px;
                     height: 270px;
                     border-radius: 18px;
@@ -328,7 +359,8 @@
                 }
 
                 /* Dragonite */
-                .dragonite-card {
+                .dragonite-card
+                {
                     width: 200px;
                     height: 270px;
                     border-radius: 18px;
@@ -351,7 +383,8 @@
                 }
 
                 /* Raikou */
-                .raikou-card {
+                .raikou-card
+                {
                     width: 200px;
                     height: 270px;
                     border-radius: 18px;
@@ -374,7 +407,8 @@
                 }
 
                 /* Water Energy */
-                .water-energy-card {
+                .water-energy-card
+                {
                     width: 200px;
                     height: 270px;
                     border-radius: 18px;
@@ -397,7 +431,8 @@
                 }
 
                 /* Electric Energy */
-                .electric-energy-card {
+                .electric-energy-card
+                {
                     width: 200px;
                     height: 270px;
                     border-radius: 18px;
@@ -420,7 +455,8 @@
                 }
 
                 /* Psychic Energy */
-                .psychic-energy-card {
+                .psychic-energy-card
+                {
                     width: 200px;
                     height: 270px;
                     border-radius: 18px;
@@ -455,7 +491,8 @@
                 }
 
                 /* The following classes are used for all Trainer pokemon cards (Supporters, Items, and Stadiums) */
-                .trainer-card {
+                .trainer-card
+                {
                     width: 200px;
                     height: 270px;
                     border-radius: 18px;
@@ -1108,7 +1145,5 @@
             <!-- </div> -->
 
             </body>
-
     </body>
-
 </html>
