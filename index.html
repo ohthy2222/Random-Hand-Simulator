@@ -94,30 +94,17 @@
                 // purpose: expects nothing and returns nothing with the side-effect of
                 //          delting all of the cards in the hand that the user has been dealt
 
-                function deleteHand() {
-                    const HAND = document.getElementById('user-hand');
-                    HAND.innerHTML = '';
+                function deleteHand()
+                {
+                    const HAND = document.getElementById('user-hand'); /* give the user-hand an id of HAND */
+
+                    while (HAND.firstChild) /* keep running this loop while there's one child element within user-hand */
+                    {
+                        HAND.removeChild(HAND.firstChild); /* remove the first element from user-hand */
+                    }
+
+                    drawnCardIndices = []; /* get rid of all of the stored indices, this way it's possible to draw the same card in a new hand several times in a row, as it should be */
                 }
-
-                // function overlappingCards()
-                // {
-                //     const HAND = document.getElementById('user-hand'); /* access the user's hand by id */
-                //     const NODE_LIST_OF_CARDS = HAND.children; /* get all elements of the user's hand */
-
-                //     for (let i = 0; i < NODE_LIST_OF_CARDS.length; ++i) /* loop this for how many elements there are in user-hand */
-                //     {
-                //         if (NODE_LIST_OF_CARDS.length > 7) /* for ever seven cards, make them overlap */
-                //         {
-                //             NODE_LIST_OF_CARDS[i].style.marginLeft = i * -50 + 'px'; /* cause the cards to progressively overlap more and more */
-                //             NODE_LIST_OF_CARDS[i].style.zIndex = i; /* the newest card always displays on top, because it will have the higher zIndex */
-                //         }
-                //         else
-                //         {
-                //             NODE_LIST_OF_CARDS[i].style.marginLeft = '0px'; /* if there are less than 7 cards, use default layout */
-                //             NODE_LIST_OF_CARDS[i].style.zIndex = 0; /*  */
-                //         }
-                //     }
-                // }
 
                 // Create a function that makes a new hand of 7 random cards from the deck
                 // signature: createHand(): void -> void
@@ -126,7 +113,8 @@
                 //          calling the deleteHand() function and then giving the user
                 //          seven randomly generated cards from the deck of 50
 
-                function createHand() {
+                function createHand()
+                {
                     deleteHand(); // Clear whatever is currently in the user's hand
 
                     // Accessing the list of the cards in the deck and giving it a variable declaration
@@ -155,7 +143,7 @@
                         }
 
                         const HAND_CARD = NODE_LIST_OF_CARDS[randomCard]; // get the list element at index of randomCard
-                        const NEW_HAND_CARD = HAND_CARD.cloneNode(true); // clone it
+                        const NEW_HAND_CARD = HAND_CARD.cloneNode(true); // deep clone it
 
                         HAND.appendChild(NEW_HAND_CARD); // add it to the HAND list
 
@@ -177,7 +165,8 @@
                 // purpose: expects nothing and returns nothing with the side-effect of
                 //          adding one random card to the user's current hand
 
-                function addCard() {
+                function addCard()
+                {
                     if (drawnCardIndices.length < 50) {
                         const CARDS = document.getElementById('pkmn-card-list'); // Access the original deck of 50 cards
                         const HAND = document.getElementById('user-hand'); // Access the user's hand
